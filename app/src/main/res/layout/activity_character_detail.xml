@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 详情加载成功后展示的可滚动内容。 -->
+    <ScrollView
+        android:id="@+id/detailContentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="24dp">
+
+                <ImageView
+                    android:id="@+id/detailImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/image_placeholder"
+                    android:contentDescription="@string/character_image_description"
+                    android:scaleType="centerCrop"
+                    tools:src="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/detailNameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    tools:text="Rick Sanchez" />
+
+                <TextView
+                    android:id="@+id/detailStatusTextView"
+                    style="@style/CharacterDetailText"
+                    android:textStyle="bold"
+                    tools:text="状态：Alive"
+                    tools:textColor="@color/status_alive" />
+
+                <TextView
+                    android:id="@+id/detailSpeciesTextView"
+                    style="@style/CharacterDetailText"
+                    tools:text="物种：Human" />
+
+                <TextView
+                    android:id="@+id/detailGenderTextView"
+                    style="@style/CharacterDetailText"
+                    tools:text="性别：Male" />
+
+                <TextView
+                    android:id="@+id/detailTypeTextView"
+                    style="@style/CharacterDetailText"
+                    tools:text="类型：未知" />
+
+                <TextView
+                    android:id="@+id/detailOriginTextView"
+                    style="@style/CharacterDetailText"
+                    tools:text="出生地：Earth (C-137)" />
+
+                <TextView
+                    android:id="@+id/detailLocationTextView"
+                    style="@style/CharacterDetailText"
+                    tools:text="当前位置：Citadel of Ricks" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/detailLoadingProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:contentDescription="@string/loading_character_detail" />
+
+    <!-- 详情请求失败时显示。 -->
+    <LinearLayout
+        android:id="@+id/detailErrorContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/detailErrorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/error_loading_detail"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/detailRetryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/retry" />
+    </LinearLayout>
+
+</FrameLayout>

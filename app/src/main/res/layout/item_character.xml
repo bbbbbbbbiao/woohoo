@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="6dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="3dp"
+    app:strokeColor="@color/card_stroke"
+    app:strokeWidth="1dp">
+
+    <!-- 单个角色卡片的横向内容 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!--
+            角色头像。
+            tools:src 只用于 Android Studio 预览，运行时由 Coil 加载网络图片。
+        -->
+        <ImageView
+            android:id="@+id/characterImageView"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:background="@color/image_placeholder"
+            android:contentDescription="@string/character_image_description"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher" />
+
+        <!-- 角色文字信息区域 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- 角色名称 -->
+            <TextView
+                android:id="@+id/characterNameTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                tools:text="@string/character_name_placeholder" />
+
+            <!--
+                角色状态。
+                Adapter 会根据 Alive、Dead、unknown 设置不同颜色。
+            -->
+            <TextView
+                android:id="@+id/characterStatusTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="@string/character_status_placeholder"
+                tools:textColor="@color/status_alive" />
+
+            <!-- 角色物种 -->
+            <TextView
+                android:id="@+id/characterSpeciesTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:textSize="15sp"
+                tools:text="@string/character_species_placeholder" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

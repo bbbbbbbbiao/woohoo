@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidAssessment">
 
+        <!-- 角色详情页不对其他应用暴露，只能从本应用内部打开。 -->
+        <activity
+            android:name=".ui.detail.CharacterDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

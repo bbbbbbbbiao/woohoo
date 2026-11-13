@@ -3,11 +3,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <!-- 角色列表；首次请求成功后显示。 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/characterRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="6dp"
+        android:paddingBottom="22dp"
+        android:scrollbars="vertical"
+        android:visibility="gone" />
+
+    <!-- 首次加载使用页面中央的进度指示器。 -->
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/hello_world"
-        android:textSize="24sp" />
+        android:contentDescription="@string/loading_characters" />
+
+    <!-- 分页加载时显示在页面底部，不遮挡已经加载的列表。 -->
+    <ProgressBar
+        android:id="@+id/loadMoreProgressBar"
+        style="?android:attr/progressBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/loading_more_characters"
+        android:visibility="gone" />
+
+    <!-- 首次请求失败时展示错误和重试入口。 -->
+    <LinearLayout
+        android:id="@+id/errorContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/errorTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/error_loading_characters"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/retryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/retry" />
+
+    </LinearLayout>
 
 </FrameLayout>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 应用主题颜色 -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
@@ -7,4 +8,21 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- 角色存活状态使用绿色 -->
+    <color name="status_alive">#2E7D32</color>
+
+    <!-- 角色死亡状态使用红色 -->
+    <color name="status_dead">#C62828</color>
+
+    <!-- 未知状态使用橙色 -->
+    <color name="status_unknown">#EF6C00</color>
+
+    <!-- 角色卡片图片加载前的占位背景 -->
+    <color name="image_placeholder">#E0E0E0</color>
+
+    <!-- 页面与卡片使用的中性色 -->
+    <color name="screen_background">#F5F6FA</color>
+    <color name="text_primary">#202124</color>
+    <color name="card_stroke">#DADCE0</color>
 </resources>

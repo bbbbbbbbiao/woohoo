@@ -1,4 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 应用显示名称 -->
     <string name="app_name">Android Assessment</string>
-    <string name="hello_world">Hello World</string>
+    <string name="character_list_title">Rick and Morty 角色</string>
+    <string name="character_detail_title">角色详情</string>
+
+    <!-- 网络请求失败时显示的默认提示 -->
+    <string name="error_loading_characters">角色加载失败，请重试</string>
+
+    <!-- 重新请求数据的按钮文字 -->
+    <string name="retry">重试</string>
+    <string name="loading_characters">正在加载角色</string>
+    <string name="loading_more_characters">正在加载更多角色</string>
+    <string name="loading_character_detail">正在加载角色详情</string>
+    <string name="error_loading_detail">角色详情加载失败，请重试</string>
+    <string name="invalid_character">角色参数无效</string>
+    <string name="load_more_failed_format">加载下一页失败：%1$s</string>
+
+    <!-- 角色头像的无障碍描述 -->
+    <string name="character_image_description">角色头像</string>
+
+    <!-- 仅用于 XML 预览的占位文字 -->
+    <string name="character_name_placeholder">角色名称</string>
+    <string name="character_status_placeholder">状态：Alive</string>
+    <string name="character_species_placeholder">物种：Human</string>
+
+    <!-- 运行时角色信息的格式化文案 -->
+    <string name="character_status_format">状态：%1$s</string>
+    <string name="character_species_format">物种：%1$s</string>
+    <string name="character_gender_format">性别：%1$s</string>
+    <string name="character_type_format">类型：%1$s</string>
+    <string name="character_origin_format">出生地：%1$s</string>
+    <string name="character_location_format">当前位置：%1$s</string>
+    <string name="unknown_value">未知</string>
 </resources>

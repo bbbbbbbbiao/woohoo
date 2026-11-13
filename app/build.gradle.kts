@@ -39,21 +39,22 @@ dependencies {
     implementation(libs.material)
 
     // 角色列表
-    implementation("androidx.recyclerview:recyclerview:1.4.0")
+    implementation(libs.androidx.recyclerview)
 
     // ViewModel 和 生命周期
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.11.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.11.0")
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
     // 网络请求 和 JSON解析
-    implementation("com.squareup.retrofit2:retrofit:3.0.0")
-    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.converter.gson)
 
-    // 网络图片加载
-    implementation("io.coil-kt.coil3:coil:3.6.3")
-    implementation("io.coil-kt.coil3:coil-network-okhttp:3.6.3")
+    // 网络图片加载（Coil 2 与当前项目的 Kotlin 版本兼容）
+    implementation(libs.coil)
 
     testImplementation(libs.junit)
+    // ViewModel 协程与 StateFlow 的本地单元测试工具
+    testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
 }

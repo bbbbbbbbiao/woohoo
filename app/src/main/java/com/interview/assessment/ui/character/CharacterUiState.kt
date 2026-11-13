@@ -2,34 +2,29 @@ package com.interview.assessment.ui.character
 
 import com.interview.assessment.data.model.Character
 
-/**
- *  角色列表页面可能出现的界面状态
- */
+/** 角色列表页面可能出现的界面状态。 */
+sealed interface CharacterUiState {
 
-sealed interface CharacterUIState {
-    /**
-     *  正在加载角色数据
-     */
-    data object Loading : CharacterUIState
+    /** 首次进入页面时正在加载数据。 */
+    data object Loading : CharacterUiState
 
     /**
-     *  角色数据加载成功
+     * 数据加载成功。
      *
-     * @param characters 当前获取到的角色列表
-     * @param hasNextPage 是否还有下一页，用于后续实现分页
+     * @param characters 已经加载的全部角色
+     * @param hasNextPage 是否还能继续加载下一页
+     * @param isLoadingMore 是否正在加载下一页
+     * @param loadMoreError 下一页加载失败时需要显示的提示
      */
     data class Success(
-        val characters : List<Character>,
-        val hasNextPage : Boolean
-    ) : CharacterUIState
+        val characters: List<Character>,
+        val hasNextPage: Boolean,
+        val isLoadingMore: Boolean = false,
+        val loadMoreError: String? = null
+    ) : CharacterUiState
 
-    /**
-     *  角色数据加载失败
-     *
-     * @param message 展示给用户的错误信息
-     */
+    /** 首次加载失败，此时页面显示错误区域和重试按钮。 */
     data class Error(
-        val message : String
-    ) : CharacterUIState
-
+        val message: String
+    ) : CharacterUiState
 }
